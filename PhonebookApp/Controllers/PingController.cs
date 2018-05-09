@@ -1,13 +1,23 @@
-﻿using System.Web.Http;
+﻿using System.Net.Http;
+using System.Web.Http;
+using PhonebookApp.Business.Abstract;
 
 namespace PhonebookApp.Controllers
 {
+    [RoutePrefix("")]
     public class PingController : ApiController
     {
-        [HttpGet]
-        public IHttpActionResult Ping()
+        private readonly IPingService service;
+
+        public PingController(IPingService service)
         {
-            return Ok("Pong");
+            this.service = service;
+        }
+
+        [HttpGet]
+        public HttpResponseMessage Ping()
+        {
+            return Request.CreateResponse(service.Ping());
         }
     }
 }

@@ -12,6 +12,6 @@ namespace PhonebookApp.Models
 
         public string Patronymic { get; set; }
 
-        public List<int> PhoneNumbers { get; set; }
+        public List<string> PhoneNumbers { get; set; }
     }
 }

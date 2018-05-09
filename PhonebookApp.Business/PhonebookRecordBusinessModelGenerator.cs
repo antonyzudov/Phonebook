@@ -3,6 +3,7 @@ using System;
 using PhonebookApp.Business.Abstract.Models;
 using PhonebookApp.Models;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace PhonebookApp.Business
 {
@@ -10,8 +11,11 @@ namespace PhonebookApp.Business
     {
         public PhonebookRecord Generate(PhonebookRecordSaveRequest saveRequest)
         {
+            var phoneNumbers = saveRequest.PhoneNumbers?.Select(x => ParseNumber(x)).ToList() ?? new List<string>();
+
             char[] charSeparators = new char[] { ',', ' ', '.' };
-            var words = saveRequest.Fullname.Split(charSeparators, StringSplitOptions.RemoveEmptyEntries).ToList();
+            var words = saveRequest.Fullname?.Split(charSeparators, StringSplitOptions.RemoveEmptyEntries).ToList() 
+                ?? new List<string>();
 
             if (words.Count <= 1)
             {
@@ -19,6 +23,7 @@ namespace PhonebookApp.Business
                 {
                     Id = saveRequest.Id.GetValueOrDefault(0),
                     Surame = words.FirstOrDefault(),
+                    PhoneNumbers = phoneNumbers
                 };
             }
 
@@ -28,7 +33,8 @@ namespace PhonebookApp.Business
                 {
                     Id = saveRequest.Id.GetValueOrDefault(0),
                     Name = words.First(),
-                    Surame = words.Last()
+                    Surame = words.Last(),
+                    PhoneNumbers = phoneNumbers
                 };
             }
 
@@ -43,8 +49,14 @@ namespace PhonebookApp.Business
                 Id = saveRequest.Id.GetValueOrDefault(0),
                 Name = string.Join(" ", words),
                 Patronymic = patronymic,
-                Surame = surname
+                Surame = surname,
+                PhoneNumbers = phoneNumbers
             };
+        }
+
+        private string ParseNumber(string number)
+        {
+            return string.Join("", number.Where(c => char.IsDigit(c)));
         }
     }
 }

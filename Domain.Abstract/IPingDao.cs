@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 
-namespace PhonebookApp.Business.Abstract
+namespace Domain.Abstract
 {
-    public interface IPingService
+    public interface IPingDao
     {
         Task<string> PingAsync();
     }

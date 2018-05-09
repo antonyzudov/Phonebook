@@ -1,6 +1,7 @@
 ﻿using System.Net.Http;
 using System.Web.Http;
 using PhonebookApp.Business.Abstract;
+using System.Threading.Tasks;
 
 namespace PhonebookApp.Controllers
 {
@@ -15,9 +16,11 @@ namespace PhonebookApp.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage Ping()
+        public async Task<HttpResponseMessage> Ping()
         {
-            return Request.CreateResponse(service.Ping());
+            var result = await service.PingAsync().ConfigureAwait(false);
+
+            return Request.CreateResponse(result);
         }
     }
 }

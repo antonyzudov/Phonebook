@@ -138,6 +138,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Domain.Abstract\PhonebookApp.Domain.Abstract.csproj">
+      <Project>{b31bda55-b478-4732-8809-c2bfd36be2de}</Project>
+      <Name>PhonebookApp.Domain.Abstract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhonebookApp.Business.Abstract\PhonebookApp.Business.Abstract.csproj">
       <Project>{846e5d35-31a2-4a18-9b5f-856a57afde90}</Project>
       <Name>PhonebookApp.Business.Abstract</Name>
@@ -145,6 +149,10 @@
     <ProjectReference Include="..\PhonebookApp.Business\PhonebookApp.Business.csproj">
       <Project>{5adfadf5-3bbb-41da-b74f-a6335f70d83a}</Project>
       <Name>PhonebookApp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp.Domain\PhonebookApp.Domain.csproj">
+      <Project>{6dec5f0c-e41a-451d-a3e3-b12013b06db7}</Project>
+      <Name>PhonebookApp.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

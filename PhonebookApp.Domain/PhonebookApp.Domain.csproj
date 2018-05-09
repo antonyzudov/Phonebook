@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ADFADF5-3BBB-41DA-B74F-A6335F70D83A}</ProjectGuid>
+    <ProjectGuid>{6DEC5F0C-E41A-451D-A3E3-B12013B06DB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PhonebookApp.Business</RootNamespace>
-    <AssemblyName>PhonebookApp.Business</AssemblyName>
+    <RootNamespace>PhonebookApp.Domain</RootNamespace>
+    <AssemblyName>PhonebookApp.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PingService.cs" />
+    <Compile Include="BaseDao.cs" />
+    <Compile Include="PingDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,10 +54,10 @@
       <Project>{b31bda55-b478-4732-8809-c2bfd36be2de}</Project>
       <Name>PhonebookApp.Domain.Abstract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhonebookApp.Business.Abstract\PhonebookApp.Business.Abstract.csproj">
-      <Project>{846e5d35-31a2-4a18-9b5f-856a57afde90}</Project>
-      <Name>PhonebookApp.Business.Abstract</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

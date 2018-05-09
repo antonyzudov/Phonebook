@@ -18,6 +18,7 @@ namespace PhonebookApp
         {
             var container = new UnityContainer();
             container.RegisterType<IPingService, PingService>(new HierarchicalLifetimeManager());
+            container.RegisterType<IPhonebookRecordService, PhonebookRecordService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPingDao, PingDao>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
 

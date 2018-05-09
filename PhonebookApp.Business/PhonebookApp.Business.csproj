@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhonebookRecordService.cs" />
     <Compile Include="PingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,6 +52,10 @@
     <ProjectReference Include="..\PhonebookApp.Business.Abstract\PhonebookApp.Business.Abstract.csproj">
       <Project>{846e5d35-31a2-4a18-9b5f-856a57afde90}</Project>
       <Name>PhonebookApp.Business.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
+      <Project>{B0097B0E-3F7D-44CB-B6D3-025777C5056E}</Project>
+      <Name>PhonebookApp.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

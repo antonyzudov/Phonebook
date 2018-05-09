@@ -40,8 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IPhonebookRecordBusinessModelGenerator.cs" />
+    <Compile Include="IPhonebookRecordService.cs" />
     <Compile Include="IPingService.cs" />
+    <Compile Include="Models\PhonebookRecordSaveRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
+      <Project>{b0097b0e-3f7d-44cb-b6d3-025777c5056e}</Project>
+      <Name>PhonebookApp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

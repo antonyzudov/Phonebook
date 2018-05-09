@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B31BDA55-B478-4732-8809-C2BFD36BE2DE}</ProjectGuid>
+    <ProjectGuid>{B0097B0E-3F7D-44CB-B6D3-025777C5056E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Domain.Abstract</RootNamespace>
-    <AssemblyName>Domain.Abstract</AssemblyName>
+    <RootNamespace>PhonebookApp.Models</RootNamespace>
+    <AssemblyName>PhonebookApp.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPhonebookServiceDao.cs" />
-    <Compile Include="IPingDao.cs" />
+    <Compile Include="PhonebookRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
-      <Project>{b0097b0e-3f7d-44cb-b6d3-025777c5056e}</Project>
-      <Name>PhonebookApp.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

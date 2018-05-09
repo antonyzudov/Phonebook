@@ -48,13 +48,21 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="PhonebookRecordBusinessModelGeneratorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PhonebookApp\PhonebookApp.csproj">
-      <Project>{6F39314E-F5BD-403A-92C7-3553BF495ECE}</Project>
-      <Name>PhonebookApp</Name>
+    <ProjectReference Include="..\PhonebookApp.Business.Abstract\PhonebookApp.Business.Abstract.csproj">
+      <Project>{846e5d35-31a2-4a18-9b5f-856a57afde90}</Project>
+      <Name>PhonebookApp.Business.Abstract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp.Business\PhonebookApp.Business.csproj">
+      <Project>{5adfadf5-3bbb-41da-b74f-a6335f70d83a}</Project>
+      <Name>PhonebookApp.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
+      <Project>{b0097b0e-3f7d-44cb-b6d3-025777c5056e}</Project>
+      <Name>PhonebookApp.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

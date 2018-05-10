@@ -22,7 +22,7 @@ namespace PhonebookApp.Business
                 return new PhonebookRecord
                 {
                     Id = saveRequest.Id.GetValueOrDefault(0),
-                    Surame = words.FirstOrDefault(),
+                    Surname = words.FirstOrDefault(),
                     PhoneNumbers = phoneNumbers
                 };
             }
@@ -33,7 +33,7 @@ namespace PhonebookApp.Business
                 {
                     Id = saveRequest.Id.GetValueOrDefault(0),
                     Name = words.First(),
-                    Surame = words.Last(),
+                    Surname = words.Last(),
                     PhoneNumbers = phoneNumbers
                 };
             }
@@ -49,7 +49,7 @@ namespace PhonebookApp.Business
                 Id = saveRequest.Id.GetValueOrDefault(0),
                 Name = string.Join(" ", words),
                 Patronymic = patronymic,
-                Surame = surname,
+                Surname = surname,
                 PhoneNumbers = phoneNumbers
             };
         }

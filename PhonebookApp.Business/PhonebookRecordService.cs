@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using PhonebookApp.Business.Abstract.Models;
 using Domain.Abstract;
+using PhonebookApp.Models;
+using System;
 
 namespace PhonebookApp.Business
 {
@@ -24,6 +26,11 @@ namespace PhonebookApp.Business
 
             var id = await dao.SaveAsync(businessModel).ConfigureAwait(false);
             return id;
+        }
+
+        public Task<PhonebookRecord> GetAsync(int id)
+        {
+            return dao.GetAsync(id);
         }
     }
 }

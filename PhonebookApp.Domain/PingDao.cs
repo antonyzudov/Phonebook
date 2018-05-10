@@ -9,9 +9,9 @@ namespace PhonebookApp.Domain
         public Task<string> PingAsync()
         {
             return WithConnection(c =>
-             {
-                 return c.QueryFirstAsync<string>("select 'pong'");
-             });
+            {
+                return c.QueryFirstAsync<string>("select 'pong'");
+            });
         }
     }
 }

@@ -2,15 +2,11 @@
 
 namespace PhonebookApp.Models
 {
-    public class PhonebookRecord
+    public class PhonebookRecordClientData
     {
         public int Id { get; set; }
 
-        public string Name { get; set; }
-
-        public string Surname { get; set; }
-
-        public string Patronymic { get; set; }
+        public string FullName { get; set; }
 
         public List<string> PhoneNumbers { get; set; }
     }

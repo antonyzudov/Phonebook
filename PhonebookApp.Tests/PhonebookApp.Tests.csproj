@@ -33,7 +33,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -48,8 +50,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PhonebookRecordBusinessModelGeneratorTest.cs" />
+    <Compile Include="PhonebookRecordBusinessModelGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PhonebookRecordMapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PhonebookApp.Business.Abstract\PhonebookApp.Business.Abstract.csproj">
@@ -63,6 +66,10 @@
     <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
       <Project>{b0097b0e-3f7d-44cb-b6d3-025777c5056e}</Project>
       <Name>PhonebookApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp\PhonebookApp.csproj">
+      <Project>{6f39314e-f5bd-403a-92c7-3553bf495ece}</Project>
+      <Name>PhonebookApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

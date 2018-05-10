@@ -21,6 +21,7 @@ namespace PhonebookApp
             container.RegisterType<IPhonebookRecordService, PhonebookRecordService>(new HierarchicalLifetimeManager());
             container.RegisterType<IPhonebookRecordBusinessModelGenerator, PhonebookRecordBusinessModelGenerator>(new HierarchicalLifetimeManager());
             container.RegisterType<IPingDao, PingDao>(new HierarchicalLifetimeManager());
+            container.RegisterType<IPhonebookRecordDao, PhonebookRecordDao>(new HierarchicalLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
 
             // Конфигурация и службы веб-API

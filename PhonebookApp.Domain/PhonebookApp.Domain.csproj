@@ -46,18 +46,42 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDao.cs" />
+    <Compile Include="PhonebookRecordDao.cs" />
     <Compile Include="PingDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SQL.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain.Abstract\PhonebookApp.Domain.Abstract.csproj">
       <Project>{b31bda55-b478-4732-8809-c2bfd36be2de}</Project>
       <Name>PhonebookApp.Domain.Abstract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PhonebookApp.Models\PhonebookApp.Models.csproj">
+      <Project>{b0097b0e-3f7d-44cb-b6d3-025777c5056e}</Project>
+      <Name>PhonebookApp.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SQL.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SQL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\DeletePhoneNumbersByPersonId.sql" />
+    <Content Include="Scripts\InsertPerson.sql" />
+    <Content Include="Scripts\InsertPhoneNumbers.sql" />
+    <Content Include="Scripts\SelectPersonById.sql" />
+    <Content Include="Scripts\SelectPhoneNumbersByPersonId.sql" />
+    <Content Include="Scripts\UpdatePerson.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

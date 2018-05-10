@@ -27,9 +27,9 @@ namespace PhonebookApp.Controllers
         }
 
         [HttpGet]
-        public async Task<PhonebookRecordClientData> Get()
+        public async Task<PhonebookRecordClientData> Get([FromUri] int id)
         {
-            var model = await service.GetAsync(1).ConfigureAwait(false);
+            var model = await service.GetAsync(id).ConfigureAwait(false);
             return PhonebookRecordMapper.MapToClientData(model);
         }
     }

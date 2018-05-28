@@ -1,4 +1,5 @@
 ﻿using Domain.Abstract;
+using Microsoft.Practices.Unity;
 using PhonebookApp.Business;
 using PhonebookApp.Business.Abstract;
 using PhonebookApp.Domain;
@@ -6,9 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.Http.Dependencies;
-using Unity;
-using Unity.Exceptions;
-using Unity.Lifetime;
 
 namespace PhonebookApp
 {
@@ -17,11 +15,13 @@ namespace PhonebookApp
         public static void Register(HttpConfiguration config)
         {
             var container = new UnityContainer();
-            container.RegisterType<IPingService, PingService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPhonebookRecordService, PhonebookRecordService>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPhonebookRecordBusinessModelGenerator, PhonebookRecordBusinessModelGenerator>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPingDao, PingDao>(new HierarchicalLifetimeManager());
-            container.RegisterType<IPhonebookRecordDao, PhonebookRecordDao>(new HierarchicalLifetimeManager());
+
+            container.RegisterTypes(
+                AllClasses.FromLoadedAssemblies(), 
+                WithMappings.FromMatchingInterface,
+                WithName.Default,
+                WithLifetime.PerResolve);
+
             config.DependencyResolver = new UnityResolver(container);
 
             // Конфигурация и службы веб-API
